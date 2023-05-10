@@ -1,5 +1,5 @@
 *** Settings ***
-Library         pages//SearchFlightPage.py  Chrome
+Library         SearchFlightPage.py     Chrome    #Firefox
 
 
 *** Keywords ***
