@@ -1,3 +1,10 @@
+*** Keywords ***
+Console
+    [Arguments]    ${output}
+    Log To Console    ${output}
+
+
+
 *** Test Cases ***
 Simple IF
     ${random_number}    Evaluate    random.randint(0, 10)
@@ -15,8 +22,3 @@ IF Expression
             Console    High ${i}
         END
     END
-
-*** Keywords ***
-Console
-    [Arguments]    ${output}
-    Log To Console    ${output}
