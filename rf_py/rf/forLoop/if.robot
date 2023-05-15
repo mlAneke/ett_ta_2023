@@ -1,5 +1,5 @@
 *** Test Cases ***
-Simpe IF
+Simple IF
     ${random_number}    Evaluate    random.randint(0, 10)
     IF    ${random_number} % 2
         Console    ${random_number} is odd!
