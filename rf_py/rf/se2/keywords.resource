@@ -22,10 +22,14 @@ Verify Stored Text Length
 Get Stored Text
     [Return]    ${stored_text}
 
-Check Correct Greeting
+Check Correct Greeting             #NOT READY
     [Arguments]    ${greeting}
     IF   $greeting == 'Hail Our Robot Overlords!'
         Log To Console    \nYou may proceed...
+    END
+    IF   $greeting == 'Hello World!'
+        Log To Console    \nYou may proceed also in this case...
+    END
     ELSE
         Fail    Sorry. But that was the wrong answer... Bye Bye...
     END
