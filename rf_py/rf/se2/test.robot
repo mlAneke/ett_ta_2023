@@ -8,9 +8,9 @@ Library           DateTime
 *** Variables ***
 ${var1}    Set Variable    text1
 ${var2}    Set Variable    text1
-${var3}    Set Variable    5
-${var4}    Set Variable    6
-${res}     Set Variable    13
+${var3}        5
+${var4}        8
+${res}         13
 
 
 *** Test Cases ***
@@ -22,7 +22,7 @@ Simple Test Case
 
 Test with Keywords
     Store Text    Hail Our Robot
-    Add Text To Stored Text     Overlords!!
+    Add Text To Stored Text     Overlords!
     Verify Stored Text Length    25
     ${current_text}=    Get Stored Text
     Should Be Equal    ${current_text}    Hail Our Robot Overlords!
@@ -33,6 +33,6 @@ Test for the year 2023 tha
     Log    ${date}
     Should Be Equal As Strings    ${date.year}    2023
 
-Test Case that fails
+Test Case that ACTUALLY DOES NOT fail ANYMORE
     Check Correct Greeting    Hail Our Robot Overlords!
     Check Correct Greeting    Hello World!

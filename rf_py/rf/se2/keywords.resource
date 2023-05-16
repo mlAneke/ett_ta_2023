@@ -24,12 +24,12 @@ Get Stored Text
 
 Check Correct Greeting             #NOT READY
     [Arguments]    ${greeting}
-    IF   $greeting == 'Hail Our Robot Overlords!'
+    IF   "${greeting}" == 'Hail Our Robot Overlords!'
         Log To Console    \nYou may proceed...
-    END
-    IF   $greeting == 'Hello World!'
+    
+    ELSE IF  "${greeting}" == 'Hello World!'
         Log To Console    \nYou may proceed also in this case...
-    END
-    ELSE
+    
+    ELSE IF  "${greeting}" != 'Hail Our Robot Overlords!' or "${greeting}" != 'Hello World!'
         Fail    Sorry. But that was the wrong answer... Bye Bye...
     END
