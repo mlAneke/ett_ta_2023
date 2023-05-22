@@ -1,22 +1,27 @@
 *** Settings ***
 Library         calculator.py
 
+*** Variables ***
+${my_global_input}    initialState
+
 
 *** Keywords ***
 The Calculator Is Running
     Log    Opening Calculator
     Start Calculator
 
-The User Enters The Term "${term}"
-    Log    Entering ${term}
+The User Enters The Term "${mylocal}"
+    Log    Entering ${mylocal}
 
-    ${my_local}    Set Variable     ${term}
+    ${my_local}    Set Variable     ${mylocal}
     Log     ${my_local}
-    Set Test Variable    ${term}
+    #Log To Console    ${my_global_input}
+    Set Global Variable     ${my_global_input}    ${mylocal}
+    #Log To Console    ${my_global_input}
 
 The User Triggers The Calculation
     Log    Triggering Calculation
-    ${result}    Calculate Term    ${term}
+    ${result}    Calculate Term    ${my_global_input}
     Set Test Variable   ${result}
     
 The Result Should Be "${expected}"

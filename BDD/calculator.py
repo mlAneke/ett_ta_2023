@@ -10,6 +10,9 @@ def calculate_term(term):
     return eval(term)
 
 
+#0b
+#0d
+#0x 
 
 ### If you could like to test the application itself directly, please uncommend the following lines
 #start_calculator()
