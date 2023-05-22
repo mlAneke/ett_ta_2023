@@ -30,6 +30,9 @@ Check Correct Greeting             #NOT READY
     ELSE IF  "${greeting}" == 'Hello World!'
         Log To Console    \nYou may proceed also in this case...
     
+    ELSE IF  "${greeting}" == 'Hello Daniel!'
+        Log To Console    \nYou may proceed also in this case...
+    
     ELSE IF  "${greeting}" != 'Hail Our Robot Overlords!' or "${greeting}" != 'Hello World!'
         Fail    Sorry. But that was the wrong answer... Bye Bye...
     END

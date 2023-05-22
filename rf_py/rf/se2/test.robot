@@ -36,3 +36,4 @@ Test for the year 2023 tha
 Test Case that ACTUALLY DOES NOT fail ANYMORE
     Check Correct Greeting    Hail Our Robot Overlords!
     Check Correct Greeting    Hello World!
+    Check Correct Greeting    Hello Daniel!
