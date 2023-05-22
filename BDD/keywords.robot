@@ -1,6 +1,7 @@
 *** Settings ***
 Library         calculator.py
 
+
 *** Keywords ***
 The Calculator Is Running
     Log    Opening Calculator
@@ -8,6 +9,9 @@ The Calculator Is Running
 
 The User Enters The Term "${term}"
     Log    Entering ${term}
+
+    ${my_local}    Set Variable     ${term}
+    Log     ${my_local}
     Set Test Variable    ${term}
 
 The User Triggers The Calculation

@@ -16,3 +16,6 @@ def calculate_term(term):
 #res = calculate_term("3 + 2")
 
 #print(res)
+
+
+### If you keep the previous lines uncommented, changes will be noticed when you are aiming to run the app/calculator directly. Robotframework [RF] calls the functions directly without excecuting the whole file
