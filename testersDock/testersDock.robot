@@ -8,6 +8,10 @@ Library  Collections
 *** Variables ***
 
 *** Test Cases ***
+
+### HUOMIO! All tests with weather API have been removed because that API has changed. There are plenty of free APIs you can play with but most of them requires you to sign in. ###
+
+
 Do a POST Request and validate the response code, response body, and response headers
     [documentation]  This test case verifies that the response code of the POST Request should be 201,
     ...  the response body contains the 'id' key with value '101',
