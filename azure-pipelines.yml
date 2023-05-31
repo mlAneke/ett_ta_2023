@@ -1,0 +1,35 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+strategy:
+  matrix:
+    Python37:
+      python.version: '3.7'
+  maxParallel: 1
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+
+- task: UsePythonVersion@0
+  inputs: 
+    versionSpec: '$(python.version)'
+    architecture: 'x64'
+
+- script: pip install robotframework robotframework-pabot robotframework-seleniumlibrary webdrivermanager
+  displayName: 'Install dependencies'
+
+- powershell: |
+   Write-Host "Robot Framework tests"
+   robot -x 'outputxunit.xml' -t 'Your Test' '$(Build.SourcesDirectory)\ett_ta_2023\ex1\login_tests\.'
+  failOnStderr: true
+  displayName: 'Run Robot Framework Tests'
+  continueOnError: true
+
+- task: PublishTestResults@2
